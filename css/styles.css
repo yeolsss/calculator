@@ -110,7 +110,7 @@ body {
 .operator.equal {
   grid-area: equal;
 }
-.button.dot {
+.operator.dot {
   grid-area: dot;
 }
 .operator.clear {
