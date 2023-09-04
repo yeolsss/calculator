@@ -66,55 +66,55 @@ body {
 .div-result {
   grid-area: result;
 }
-.div-one {
+.button.one {
   grid-area: one;
 }
-.div-two {
+.button.two {
   grid-area: two;
 }
-.div-three {
+.button.three {
   grid-area: three;
 }
-.div-four {
+.button.four {
   grid-area: four;
 }
-.div-five {
+.button.five {
   grid-area: five;
 }
-.div-six {
+.button.six {
   grid-area: six;
 }
-.div-seven {
+.button.seven {
   grid-area: seven;
 }
-.div-eight {
+.button.eight {
   grid-area: eight;
 }
-.div-nine {
+.button.nine {
   grid-area: nine;
 }
-.div-zero {
+.button.zero {
   grid-area: zero;
 }
-.div-add {
+.button.add {
   grid-area: add;
 }
-.div-minus {
+.button.minus {
   grid-area: minus;
 }
-.div-division {
+.button.division {
   grid-area: division;
 }
-.div-multiply {
+.button.multiply {
   grid-area: multiply;
 }
-.div-equal {
+.button.equal {
   grid-area: equal;
 }
-.div-dot {
+.button.dot {
   grid-area: dot;
 }
-.div-clear {
+.button.clear {
   grid-area: clear;
 }
 
