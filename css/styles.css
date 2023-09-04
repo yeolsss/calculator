@@ -1,0 +1,146 @@
+/* Reset */
+body {
+  margin: unset;
+  padding: unset;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: unset;
+  font-size: unset;
+  font-weight: unset;
+}
+
+/* Typography */
+:root {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.67;
+}
+
+/* Contents */
+body {
+  height: 100vh;
+  display: flex;
+  font-family: "Gugi", cursive;
+}
+.app-container {
+  max-width: 60%;
+  margin: auto;
+  flex-grow: 1;
+}
+
+.app-header {
+  background-color: rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 5rem;
+  font-weight: bold;
+  padding: 20px 0;
+  box-sizing: border-box;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0 -1px rgba(0, 0, 0, 0.2);
+}
+
+.app-main {
+  height: calc(100vh - 400px);
+  font-size: 3rem;
+  margin-top: 10px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template: repeat(7, 1fr) / repeat(4, 1fr);
+  grid-template-areas:
+    "result result result result"
+    "result result result result"
+    "clear clear division multiply"
+    "seven eight nine minus"
+    "four five six add"
+    "one two three equal"
+    "zero zero dot equal";
+}
+.div-result {
+  grid-area: result;
+}
+.div-one {
+  grid-area: one;
+}
+.div-two {
+  grid-area: two;
+}
+.div-three {
+  grid-area: three;
+}
+.div-four {
+  grid-area: four;
+}
+.div-five {
+  grid-area: five;
+}
+.div-six {
+  grid-area: six;
+}
+.div-seven {
+  grid-area: seven;
+}
+.div-eight {
+  grid-area: eight;
+}
+.div-nine {
+  grid-area: nine;
+}
+.div-zero {
+  grid-area: zero;
+}
+.div-add {
+  grid-area: add;
+}
+.div-minus {
+  grid-area: minus;
+}
+.div-division {
+  grid-area: division;
+}
+.div-multiply {
+  grid-area: multiply;
+}
+.div-equal {
+  grid-area: equal;
+}
+.div-dot {
+  grid-area: dot;
+}
+.div-clear {
+  grid-area: clear;
+}
+
+.app-main > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in;
+}
+.app-main > div:first-child {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.app-main > div:not(:first-child):hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.div-result {
+  display: block;
+  text-align: right;
+  padding: 0 20px;
+  font-size: 4rem;
+}
+.div-result span {
+  width: 100%;
+}
