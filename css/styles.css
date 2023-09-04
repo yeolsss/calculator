@@ -96,25 +96,25 @@ body {
 .button.zero {
   grid-area: zero;
 }
-.button.add {
+.operator.add {
   grid-area: add;
 }
-.button.minus {
+.operator.minus {
   grid-area: minus;
 }
-.button.division {
+.operator.division {
   grid-area: division;
 }
-.button.multiply {
+.operator.multiply {
   grid-area: multiply;
 }
-.button.equal {
+.operator.equal {
   grid-area: equal;
 }
 .button.dot {
   grid-area: dot;
 }
-.button.clear {
+.operator.clear {
   grid-area: clear;
 }
 
