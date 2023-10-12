@@ -16,9 +16,6 @@ let waitingOperator = "";
 let currentNumber = "0";
 let resultNumber = "0";
 
-// const
-const NAVIGATOR_LANGUAGE = navigator.language;
-
 //숫자 버튼 클릭 '.' 포함
 numBtn.forEach((item) => {
   item.addEventListener("click", (event) => {
@@ -84,25 +81,46 @@ const resetCurrentState = () => {
   currentNumber = 0;
 };
 
+const delDot = (num) => {
+  if (num.length > 0) {
+    if (num.charAt(num.length - 1) === ".")
+      return num.substring(0, num.length - 1);
+    else return num;
+  } else {
+    return "0";
+  }
+};
+
 const calculator = (operator, operatorNum1, operatorNum2) => {
+  operatorNum1 = delDot(operatorNum1);
+  operatorNum2 = delDot(operatorNum2);
+
   switch (operator) {
     case "+":
-      resultNumber = parseFloat(operatorNum1) + parseFloat(operatorNum2);
+      resultNumber = String(
+        parseFloat(operatorNum1) + parseFloat(operatorNum2)
+      );
       printResult(resultNumber);
       resetCurrentState();
       break;
     case "-":
-      resultNumber = parseFloat(operatorNum1) - parseFloat(operatorNum2);
+      resultNumber = String(
+        parseFloat(operatorNum1) - parseFloat(operatorNum2)
+      );
       printResult(resultNumber);
       resetCurrentState();
       break;
     case "X":
-      resultNumber = parseFloat(operatorNum1) * parseFloat(operatorNum2);
+      resultNumber = String(
+        parseFloat(operatorNum1) * parseFloat(operatorNum2)
+      );
       printResult(resultNumber);
       resetCurrentState();
       break;
     case "/":
-      resultNumber = parseFloat(operatorNum1) / parseFloat(operatorNum2);
+      resultNumber = String(
+        parseFloat(operatorNum1) / parseFloat(operatorNum2)
+      );
       printResult(resultNumber);
       resetCurrentState();
       break;

@@ -13,13 +13,18 @@ h5 {
   font-weight: unset;
 }
 
+button {
+  margin: unset;
+  padding: unset;
+  border: unset;
+}
+
 /* Typography */
 :root {
-  font-size: 10px;
+  font-size: 62.5%;
 }
 
 body {
-  font-size: 1.6rem;
   line-height: 1.67;
 }
 
@@ -117,7 +122,7 @@ body {
   grid-area: clear;
 }
 
-.app-main > div {
+.app-main > button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -126,11 +131,16 @@ body {
   cursor: pointer;
   transition: background-color 0.5s ease-in;
 }
+.app-main > button > span {
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
 .app-main > div:first-child {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.app-main > div:not(:first-child):hover {
+.app-main > button:hover {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
