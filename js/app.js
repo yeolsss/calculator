@@ -1,7 +1,7 @@
 // 전역변수
 // 첫번째 숫자 배열
-let firstNumArr = [];
-let secondNumArr = [];
+const prevNumArr = [];
+const resultNumArr = [];
 let operator = "";
 
 // 숫자버튼 button event
@@ -13,21 +13,20 @@ numBtns.forEach((btn) => {
       currentTarget: { value },
     } = event;
 
-    // 점이 없을때
-    if (!firstNumArr.includes(".") || !secondNumArr.includes(".")) {
-      if (
-        (firstNumArr[0] === "0" || secondNumArr[0] === "0") &&
-        value === "0"
-      ) {
-        return;
+    // 배열에 이미 '.'이 있고 value가 '.' 이면 아무 행동을하지 않고 종료.
+    if (resultNumArr.includes(".") && value === ".") {
+      return;
+    }
+
+    // 배열의 0번 index에 '0'이 있을때
+    if (resultNumArr[0] === "0") {
+      // 배열에 '.'이 없고 입력값이 '.'이 아닐때
+      if (!resultNumArr.includes(".") && value !== ".") {
+        removeZero(resultNumArr);
       }
     }
 
-    // 0다음 dot 이 오지 않는다면.. 0을 삭제....
-    // 연산자가 입력되었는지 확인 후 배열에 나눠서 숫자 받기
-    operator === ""
-      ? pushNum(firstNumArr, value)
-      : pushNum(secondNumArr, value);
+    pushNum(resultNumArr, value);
   });
 });
 
@@ -42,18 +41,20 @@ operatorBtns.forEach((btn) => {
 
     // 입력 받은 연산자가 delete일 때
     if (value === "delete") {
-      if (operator === "") popNum(firstNumArr);
-      else popNum(secondNumArr);
+      popNum(resultNumArr);
       return;
     }
     // 입력 받은 연산자가 clear일때
     if (value === "clear") {
-      firstNumArr = [];
-      secondNumArr = [];
+      removeArrElement(prevNumArr);
+      removeArrElement(resultNumArr);
       operator = "";
-      pushNum(firstNumArr, "0");
+      pushNum(resultNumArr, "0");
       return;
     }
+
+    // 연산자 버튼이 'delete', 'clear'가 아닌 value가 들어왔을때
+    // resultNumArr를 prevNumArr로 옮긴 후 resultNumArr 초기화
 
     operator = value;
   });
@@ -85,16 +86,25 @@ const pushNum = (numArr, num) => {
  */
 const popNum = (numArr) => {
   numArr.pop();
+  numArr.length <= 0 && pushNum(numArr, "0");
   printNum(numArr);
 };
 
+/**
+ * 배열 요소 삭제 함수
+ * @param numArr
+ */
+const removeArrElement = (numArr) => {
+  numArr.splice(0, numArr.length);
+};
+
+/**
+ * 배열 제일 앞의 요소가 '0'일 때 삭제하는 함수
+ * @param numArr
+ */
 const removeZero = (numArr) => {
   numArr.shift();
   printNum(numArr);
 };
 
-const Person = (name, age) => {
-  (this.name = name), (this.age = age);
-};
-
-const person1 = new Person();
+const calculation = () => {};
