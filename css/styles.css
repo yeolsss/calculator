@@ -61,7 +61,7 @@ body {
   grid-template-areas:
     "result result result result"
     "result result result result"
-    "clear clear division multiply"
+    "delete clear division multiply"
     "seven eight nine minus"
     "four five six add"
     "one two three equal"
@@ -120,6 +120,11 @@ body {
 }
 .operator.clear {
   grid-area: clear;
+}
+.operator.delete {
+  grid-area: delete;
+  font-size: 4rem;
+  font-weight: bold;
 }
 
 .app-main > button {
