@@ -15,8 +15,12 @@ numBtns.forEach((btn) => {
 
     // 점이 없을때
     if (!firstNumArr.includes(".") || !secondNumArr.includes(".")) {
-      if ((firstNumArr[0] === "0" || secondNumArr[0] === "0") && value === "0")
+      if (
+        (firstNumArr[0] === "0" || secondNumArr[0] === "0") &&
+        value === "0"
+      ) {
         return;
+      }
     }
 
     // 0다음 dot 이 오지 않는다면.. 0을 삭제....
