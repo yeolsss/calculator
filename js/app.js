@@ -63,6 +63,8 @@ operatorBtns.forEach((btn) => {
     // = 연산자가 입력되면 계산 시작 그게 아닐경우
     // resultNumArr의 요소를 prevNumArr로 할당 후 resultNumArr 초기화
     if (operator !== "") {
+      // 연산자가 입력 되었을 때 currentNumArr의 마지막 인덱스가 '.' 이면 '.' 삭제
+      if (currentNumArr[currentNumArr.length - 1] === ".") popNum();
       const result = calculation();
       resultNumArr = [...(result + "")];
       prevNumArr = [...resultNumArr];
