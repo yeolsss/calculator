@@ -154,6 +154,8 @@ body {
   text-align: right;
   padding: 0 20px;
   font-size: 4rem;
+  height: auto;
+  word-break: break-all;
 }
 .div-result span {
   width: 100%;
