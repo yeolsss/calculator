@@ -125,28 +125,21 @@ const removeZero = (numArr) => {
 };
 
 const calculation = () => {
+  const prevNum = parseFloat(prevNumArr.join(""));
+  const currentNum = parseFloat(currentNumArr.join(""));
+
   switch (operator) {
     case "+":
-      return (
-        parseFloat(prevNumArr.join("")) + parseFloat(currentNumArr.join(""))
-      );
+      return prevNum + currentNum;
     case "-":
-      return (
-        parseFloat(prevNumArr.join("")) - parseFloat(currentNumArr.join(""))
-      );
+      return prevNum - currentNum;
     case "X":
       return (
-        parseFloat(prevNumArr.join("") === "0" ? "1" : prevNumArr.join("")) *
-        parseFloat(
-          currentNumArr.join("") === "0" ? "1" : currentNumArr.join("")
-        )
+        (prevNum === 0 ? 1 : prevNum) * (currentNum === 0 ? 1 : currentNum)
       );
     case "/":
       return (
-        parseFloat(prevNumArr.join("") === "0" ? "1" : prevNumArr.join("")) /
-        parseFloat(
-          currentNumArr.join("") === "0" ? "1" : currentNumArr.join("")
-        )
+        (prevNum === 0 ? 1 : prevNum) / (currentNum === 0 ? 1 : currentNum)
       );
   }
 };
