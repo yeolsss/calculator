@@ -57,7 +57,7 @@ body {
   margin-top: 10px;
   display: grid;
   grid-gap: 10px;
-  grid-template: repeat(7, 1fr) / repeat(4, 1fr);
+  grid-template: repeat(7, auto) / repeat(4, 1fr);
   grid-template-areas:
     "result result result result"
     "result result result result"
@@ -154,9 +154,9 @@ body {
   text-align: right;
   padding: 0 20px;
   font-size: 4rem;
-  height: auto;
   word-break: break-all;
+  border-radius: 10px;
 }
-.div-result span {
+.div-result p {
   width: 100%;
 }

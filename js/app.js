@@ -1,4 +1,3 @@
-// 전역변수
 // 항상 입력받는 배열
 let currentNumArr = ["0"];
 // 연산자가 입력되면 nextNumArr에 값을 받아오는 배열
@@ -29,7 +28,6 @@ numBtns.forEach((btn) => {
         removeZero(currentNumArr);
       }
     }
-
     pushNum(currentNumArr, value);
   });
 });
@@ -45,15 +43,16 @@ operatorBtns.forEach((btn) => {
 
     // 입력 받은 연산자가 delete일 때
     if (value === "delete") {
-      popNum(resultNumArr);
+      popNum(currentNumArr);
       return;
     }
+
     // 입력 받은 연산자가 clear일때
     if (value === "clear") {
       prevNumArr = ["0"];
       currentNumArr = ["0"];
       resultNumArr = ["0"];
-      printNum(resultNumArr);
+      printNum(currentNumArr);
       operator = "";
       return;
     }
@@ -64,7 +63,9 @@ operatorBtns.forEach((btn) => {
     // resultNumArr의 요소를 prevNumArr로 할당 후 resultNumArr 초기화
     if (operator !== "") {
       // 연산자가 입력 되었을 때 currentNumArr의 마지막 인덱스가 '.' 이면 '.' 삭제
-      if (currentNumArr[currentNumArr.length - 1] === ".") popNum();
+      if (currentNumArr[currentNumArr.length - 1] === ".") {
+        popNum();
+      }
       const result = calculation();
       resultNumArr = [...(result + "")];
       prevNumArr = [...resultNumArr];
